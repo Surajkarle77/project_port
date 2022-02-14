@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; 
+}
+body{
+    background:#111;
+}
+
+.navbar li{
+    float: left;
+    list-style: none;
+    margin: 15px 15px;
+   
+}
+.navbar li a{
+    padding: 3px 3px;
+    text-decoration: none;
+    color: #fff;
+}
+.navbar li a:hover{
+    top:-25px;
+    color: rgb(245, 10, 10);
+}
+.search{
+    float: right;
+    color: white;
+    margin: 11px 20px;
+    width:50px;
+   
+    position:relative;
+    transition: 0.9s;
+}
+.shadow{
+    position:absolute;
+    top:0;
+    left:-20px;
+     width:100%;
+     height:10px;
+     background:linear-gradient(180deg,rgba(0,0,0,0.1));
+     transform-origin: top;
+     transform:skew(45deg);
+     pointer-events: none;
+    
+ }
+.search::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:-3px;
+    width:4px;
+    height:100%;
+    
+    background:linear-gradient(#fff,#fff,#e3e3e3);
+    z-index: 1;
+    filter: blur(1px);
+}
+.search::after{
+    content:'';
+    position:absolute;
+    top:1px;
+    right:-163px;
+    width:0;
+    height:95%;
+    background:#7c7b7b;
+    z-index: 1;
+    filter: blur(1px);
+}
+.search:hover{
+    width: 300px;
+    
+}
+
+.search input::placeholder,
+.search input{
+    color:transparent;
+}
+.search:hover input::placeholder,
+.search:hover input{
+    color:#555
+}
+.search input{
+    position: relative;
+    width: 100%;
+    height:90%;
+    border:none;
+    padding: 2px 25px;
+    outline:none;
+    font-size: 1.1em;
+    color: #555;
+    background: linear-gradient(#dbdae1,#a3aaba);
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.1),
+    15px 15px 15px rgba(8, 8, 8, 0.1),
+    20px 20px 20px rgba(0,0,0,0.1),
+    30px 30px 30px rgba(0,0,0,0.1),
+    inset 1px 1px 2px #fff;
+}
+ion-icon{
+    position:absolute;
+    top:5px;
+    color:black;
+    right:15px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+header{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 100px;
+    z-index: 1000;
+}
+header .logo{
+    position:relative;
+    font-size: 2em;
+    color:#fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+.banner{
+    position:relative;
+    width:100%;
+    min-height: 100vh;
+    padding: 0 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+}
+.banner::before{
+    content: '';
+    position:absolute;
+    right: 0;
+    top: 0;
+    width: 400px;
+    height: 100%;
+    background:rgba(0,0,0,0.5);
+}
+.banner video{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.1;
+    pointer-events: none;
+}
+.banner .textBox{
+         position: relative;
+         max-width: 550px;
+         z-index: 2;
+}
+.banner .textBox h2{
+    color: #fff;
+    font-size: 3em;
+    color:green;
+
+}
+.banner .textBox p{
+    color: #fff;
+    font-size: 1.1em;
+    margin: 5px 0 25px; 
+}
+.banner .textBox a{
+    position: relative;
+    display: inline-block;
+    background: #fff;
+    color:#111;
+    padding:15px 25px;
+    text-decoration: none;
+    font-size:1.1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    transition: 1s;
+}
+.banner a:hover{
+    background: var(--clr);
+    box-shadow: 0 0 10px var(--clr),
+    0 0 30px var(--clr),
+    0 0 60px var(--clr),
+    0 0 100px var(--clr);
+}
+.banner .videoBx{
+    position:relative;
+    background: #fff;         /* create the video box*/
+    margin-left: 40px;
+    width: 100%;
+    height: 400px;
+    z-index:1;
+}
+.banner .videoBx video{
+    opacity: 1;
+
+}
+.banner .sci{
+    position: absolute;
+    bottom: 20px;
+    letter-spacing: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner .sci li{
+    list-style: none;
+}
+.banner .sci img{
+    display: inline-block;
+    margin-right: 15px;
+
+}
+.banner .sci img{
+    transform:scale(0.5);
+    filter: invert(1);
+}
+
+@media (max-width:991px){
+    header{
+        padding:20px 50px;
+    }
+    .banner{
+        padding: 150px 50px 0;
+        flex-direction: column;
+    }
+    .banner:before{
+        display:none;
+    }
+    .banner .textBox{
+        max-width: 100%;
+    }
+    .banner .textBox h2{
+        font-size: 2.5em;
+    }
+    .banner .videoBx{
+        width:100%;
+        height:200px;
+        margin: 40px 0 100px;
+    }
+    .banner .sci{
+        left:50px;
+    }
+}
