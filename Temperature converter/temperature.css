@@ -1,0 +1,219 @@
+:root {
+    --primary-color: #007B84;
+    --secondary-color: #00565C;
+  }
+  
+body {
+    color: var(--secondary-color);
+  }
+ 
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url("ocean.jpg");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+section .wave{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(wave.png);
+    background-size: 1000px 100px;
+    
+}
+section .wave.wave1{
+   animation: animate 30s linear infinite;
+   z-index: 1000;
+   opacity: 1;
+   animation-delay: 0s;
+   bottom:0
+}
+section .wave.wave2{
+   animation: animate2 15s linear infinite;
+   z-index: 999;
+   opacity: 0.5;
+   animation-delay: -5s;
+   bottom:10px;
+}
+section .wave.wave1{
+    animation: animate 30s linear infinite;
+    z-index: 998;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom:15;
+ }
+ section .wave.wave4{
+    animation: animate2 5s linear infinite;
+    z-index: 997;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom:20px;
+ }
+@keyframes animate{
+    0%{
+        background-position-x:0 ;
+        
+    }
+    100%{
+        background-position-x:1000px ;
+
+    }
+}
+@keyframes animate2{
+    0%{
+        background-position-x:0 ;
+        
+    }
+    100%{
+        background-position-x:1000px ;
+
+    }
+}
+  
+.card {
+    padding: 20px 0px;
+    border: 2px var(--primary-color) solid;
+    border-radius: 10px;
+  }
+  
+/* Input Section */
+  
+.card-title {
+    font-size: 24px;
+    padding: 20px 0px;
+    font-weight: 600;
+    color:white;
+  }
+  
+label {
+    font-weight: 500;
+    color:white
+  }
+  
+select {
+    margin-bottom: 40px;
+  }
+  
+#selectInputDegreeType {
+    border-radius: 0px 3px 3px 0px;
+  }
+  
+  
+.convertBtn {
+    min-width: 10px;
+    background-color: var(--primary-color);
+  
+  
+  }
+  
+.convertBtn:hover {
+    background: var(--clr);
+    box-shadow: 0 0 10px var(--clr),
+    0 0 30px var(--clr),
+    0 0 60px var(--clr),
+    0 0 100px var(--clr),
+    0 0 130px var(--clr);
+  }
+#resultValueSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    height: 200px;
+    word-wrap: normal;
+    text-align: center;
+    font-size-adjust: 0.58;
+  
+  }  
+#convertedDegree {
+    font-size: 65px;
+    font-weight: 500;
+    max-width: 500px;
+  }
+  
+#convertedUnit,
+#degree {
+    padding-bottom: 70px;
+  }
+  
+.resultSection {
+    display: flex;
+    color: white;
+  }
+.resultSection::before{
+    content: '';
+    position:absolute;
+    top:0;
+    left:0;
+    width:400%;
+    height:600%;
+    background: linear-gradient(73deg,rgb(248, 252, 2),rgb(241, 3, 3));
+    clip-path: circle(10% at 30% 17%);
+    
+
+}
+
+
+.row{
+    margin-right: -15px;
+    margin-top:40px ;
+    margin-bottom: -30px;
+}
+.card{
+    background: linear-gradient(45deg,black,transparent);
+    
+    margin-left: 30px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2),
+    5px 5px 40px rgba(0, 0, 0, 0.2),
+    5px 5px 69px rgba(0, 0, 0, 0.2);
+    
+
+}
+  /* Mobile view  */
+@media only screen and (max-width: 600px) {
+  
+body {
+      display: relative;
+      overflow: hidden;
+    }
+  
+.card-group {
+      padding: 0;
+    }
+  
+.card {
+      border: none;
+      border-radius: 0;
+      padding: 0;
+    }
+  .card-title {
+      line-height: 40px;
+    }
+  
+.card-body {
+      padding: 0;
+    }
+  
+.resultSection {
+      position: fixed;
+      top: 0;
+      padding: 10px 0px;
+      text-align: center;
+    }
+  
+.inputSection {
+      margin-top: 60%;
+    }
+  
+#degree,
+#convertedUnit {
+      padding-top: 50px;
+    }
+  
+  }
